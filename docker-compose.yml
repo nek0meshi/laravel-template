@@ -13,9 +13,9 @@ services:
       - db
 
   composer:
-    image: composer:latest
+    build: ./docker/composer
     volumes:
-      - ./backend:/app
+      - ./backend:/app:cached
     command: install
   
   nginx:
