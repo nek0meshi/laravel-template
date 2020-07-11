@@ -28,5 +28,6 @@ yarn-dc:
 .PHONY: create-project
 create-project:
 	docker run --rm \
-		--volume $(PWD):/app \
-		composer:latest create-project --prefer-dist laravel/laravel backend
+		--volume $(PWD):/app:cached \
+		composer:latest sh -c "composer config -g repos.packagist composer https://packagist.jp \
+		&& composer create-project --prefer-dist laravel/laravel backend -vvv"
