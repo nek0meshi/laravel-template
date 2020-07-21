@@ -30,4 +30,4 @@ create-project:
 	docker run --rm \
 		--volume $(PWD):/app:cached \
 		composer:latest sh -c "composer config -g repos.packagist composer https://packagist.jp \
-		&& composer create-project --prefer-dist laravel/laravel backend -vvv"
+		&& composer create-project --prefer-dist laravel/laravel=6.x backend -vvv"
